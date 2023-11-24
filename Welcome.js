@@ -21,14 +21,11 @@ const AnimatedWelcomeScreen = () => {
             useNativeDriver: true,
         });
 
-        // Початкова анімація
         fadeIn.start();
 
-        // По закінченню анімації виводимо "Анімація пройшла успішно"
         setTimeout(() => {
             setShowSuccessText(false);
             fadeOut.start(() => {
-                // Очищуємо флаг після закінчення анімації
                 setShowSuccessText(true);
             });
         }, 2000);
@@ -40,7 +37,6 @@ const AnimatedWelcomeScreen = () => {
                 Welcome
             </Animated.Text>}
             {showSuccessText && <SliderWithPictures />}
-            {/* Додайте інший функціонал тут */}
         </View>
     );
 };
